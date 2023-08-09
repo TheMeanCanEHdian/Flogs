@@ -17,11 +17,7 @@ class LogsStorage {
   Future<String?> get _localPath async {
     var directory;
 
-    if (Platform.isIOS) {
-      directory = await getApplicationDocumentsDirectory();
-    } else {
-      directory = await getExternalStorageDirectory();
-    }
+    directory = await getApplicationDocumentsDirectory();
 
     return directory.path;
   }
@@ -30,7 +26,8 @@ class LogsStorage {
     final path = "${await _localPath}/${Constants.DIRECTORY_NAME}";
 
     //creating directory
-    Directory(path).create()
+    Directory(path)
+        .create()
         // The created directory is returned as a Future.
         .then((Directory directory) {
       print(directory.path);
