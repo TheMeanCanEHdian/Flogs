@@ -26,7 +26,7 @@ dependencies:
 
   meta: ^1.9.1
   path: ^1.8.0
-  stack_trace: ^1.11.1
+  stack_trace: ^1.11.0
 
 dev_dependencies:
   flutter_test:
